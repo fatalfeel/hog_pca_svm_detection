@@ -4,7 +4,7 @@ disable PCA
 Train and predict one picture time 8.84 seconds  
 Train and detection car time 9.86 seconds  
   
-Enable PCA  
+enable PCA  
 0.9754208754208754  
 Train and predict one picture time 2.84 seconds  
 Train and detection car time 3.92 seconds  
