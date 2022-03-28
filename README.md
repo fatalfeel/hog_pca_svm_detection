@@ -10,7 +10,7 @@ Train and predict one picture time 2.84 seconds
 Train and detection car time 3.92 seconds  
 
 dataset:  
-https://drive.google.com/file/d/1dqLSViCIl67GX3vY2oqfa1BvFi8ZHaBj/view?usp=sharing
+https://drive.google.com/u/0/uc?id=1dqLSViCIl67GX3vY2oqfa1BvFi8ZHaBj
 
 refer to:  
 https://www.researchgate.net/publication/262987479_Efficient_eye_detection_using_HOG-PCA_descriptor  
