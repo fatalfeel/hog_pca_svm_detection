@@ -1,10 +1,12 @@
 # Hog Pca Svm car detection
+python3 ./hog_pca_svm_detection.py --pca False  
 disable PCA  
 0.9740740740740741  
 Train and predict one picture time 8.84 seconds  
 Train and detection car time 9.86 seconds  
   
 enable PCA  
+python3 ./hog_pca_svm_detection.py --pca True  
 0.9754208754208754  
 Train and predict one picture time 2.84 seconds  
 Train and detection car time 3.92 seconds  
