@@ -1,3 +1,4 @@
+import argparse
 import glob
 import random
 import time
@@ -11,7 +12,16 @@ from sklearn.decomposition import PCA
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 
-isPCA   = True
+def str2bool(b_str):
+    if b_str.lower() in ('yes', 'true', 't', 'y', '1'):
+        return True
+    elif b_str.lower() in ('no', 'false', 'f', 'n', '0'):
+        return False
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--pca', type=str2bool, default=True)
+args = parser.parse_args()
+
 pca     = PCA(n_components=40)
 svc     = svm.SVC()
 
@@ -87,7 +97,7 @@ def detect(image):
 
     for i in range(len(features)):
         # If region is positive then add some heat
-        if isPCA is True:
+        if args.pca is True:
             x = np.array(pca.transform([features[i]]))
             decision = svc.predict(x)
         else:
@@ -155,7 +165,7 @@ if __name__ == '__main__':
     start = time.time()
 
 #########pca enable or disable this section########
-    if isPCA is True:
+    if args.pca is True:
         pca.fit(x)
         x = np.array(pca.fit_transform(x))
 
@@ -173,7 +183,7 @@ if __name__ == '__main__':
                           orientations=9,
                           pixels_per_cell=(16, 16),
                           cells_per_block=(2, 2))
-    if isPCA is True:
+    if args.pca is True:
         x = np.array(pca.transform([hog_image])) #[hog_image] to list array
         decision = svc.predict(x)
     else:
@@ -185,11 +195,12 @@ if __name__ == '__main__':
 ########################test one car#####################
     example_image   = np.asarray(PIL.Image.open("./dataset/car_images/Acura_MDX_2014_42_18_290_35_6_77_67_193_20_FWD_7_4_SUV_oiQ.jpg"))
     retimg          = detect(example_image)
-    plt.title('result')
-    plt.imshow(retimg, cmap=None)
-    plt.show()
 
     processTime = round(time.time() - start, 2)
     print("Train and detection car time {} seconds".format(processTime))
+
+    plt.title('result')
+    plt.imshow(retimg, cmap=None)
+    plt.show()
 
     input('press enter to continue')
