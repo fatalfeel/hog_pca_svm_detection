@@ -9,5 +9,12 @@ enable PCA
 Train and predict one picture time 2.84 seconds  
 Train and detection car time 3.92 seconds  
 
-Dataset:  
+dataset:  
 https://drive.google.com/file/d/1dqLSViCIl67GX3vY2oqfa1BvFi8ZHaBj/view?usp=sharing
+
+refer to:  
+https://www.researchgate.net/publication/262987479_Efficient_eye_detection_using_HOG-PCA_descriptor  
+https://www.kaggle.com/code/mehmetlaudatekman/support-vector-machine-object-detection/notebook  
+https://github.com/irfanhanif/FaceRecognition-HOG-PCA-SVM  
+https://github.com/HandsomeHans/SVM-classification-localization  
+https://github.com/EdoardoGruppi/AMLS_assignment20_21  
