@@ -27,9 +27,9 @@ svc     = svm.SVC()
 
 def slideExtract(image, windowSize=(96, 64), channel="RGB", step=12):
     # Converting to grayscale
-    if channel == "RGB":
+    if channel == "RGB":    #PIL
         img = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
-    elif channel == "BGR":
+    elif channel == "BGR":  #opencv
         img = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     elif channel.lower() != "grayscale" or channel.lower() != "gray":
         raise Exception("Invalid channel type")
